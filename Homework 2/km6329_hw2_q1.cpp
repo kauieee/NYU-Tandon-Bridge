@@ -3,7 +3,7 @@ using namespace std;
 
 const int CENTS_IN_A_QUARTER = 25;
 const int CENTS_IN_A_DIME = 10;
-const int CENTS_IN_A_NICKEL = 5;
+const int CENTS_IN_A_NICKEL = 5; 
 const int CENTS_IN_A_PENNY = 1;
 
 int main(){
