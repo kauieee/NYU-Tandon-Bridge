@@ -27,7 +27,8 @@ int main(){
     cin >> minutesWorkedBill;
 
     totalTimeWorkedInMinutes = ((daysWorkedJohn + daysWorkedBill) * HOURS_IN_A_DAY * MINUTES_IN_AN_HOUR) + ((hoursWorkedJohn + hoursWorkedBill) * MINUTES_IN_AN_HOUR) + (minutesWorkedJohn + minutesWorkedBill);
-    cout << totalTimeWorkedInMinutes << endl;
+    
+    cout << endl;
 
     totalDays = totalTimeWorkedInMinutes / (HOURS_IN_A_DAY * MINUTES_IN_AN_HOUR);
     totalTimeWorkedInMinutes -= (totalDays * HOURS_IN_A_DAY * MINUTES_IN_AN_HOUR);
