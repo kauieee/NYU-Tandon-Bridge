@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 const int CENTS_IN_A_QUARTER = 25;

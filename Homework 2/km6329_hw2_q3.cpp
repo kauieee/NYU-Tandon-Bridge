@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 const int HOURS_IN_A_DAY = 24;
