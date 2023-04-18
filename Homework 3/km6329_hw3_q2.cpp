@@ -6,7 +6,7 @@ int main(){
     string name, studentStatus;
     int graduationYear, currentYear, differenceBetweenYears;
 
-    // Getting input from the user
+    // Getting inputs from the user
     cout << "Please enter your name: ";
     cin >> name;
 
@@ -16,6 +16,7 @@ int main(){
     cout << "Please enter current year: ";
     cin >> currentYear;
 
+    // Calculating the difference between the graduation year and the current year
     differenceBetweenYears = graduationYear - currentYear;
 
     if (differenceBetweenYears > 4) {
@@ -28,7 +29,7 @@ int main(){
         studentStatus = "a Junior";
     } else if (differenceBetweenYears == 1) {
         studentStatus = "a Senior";
-    } else if (differenceBetweenYears == 0) {
+    } else if (differenceBetweenYears <= 0) {
         studentStatus = "Graduated";
     }
 

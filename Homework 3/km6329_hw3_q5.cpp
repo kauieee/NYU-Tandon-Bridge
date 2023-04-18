@@ -10,7 +10,7 @@ int main(){
     double weightInKgs, heightInMeters;
     double bodyMassIndex;
 
-    // Getting input from the user
+    // Getting inputs from the user
     cout << "Please enter weight (in pounds): ";
     cin >> weightInPounds;
 

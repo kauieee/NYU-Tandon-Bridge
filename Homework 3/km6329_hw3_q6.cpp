@@ -12,7 +12,7 @@ int main(){
     cout << "Please enter the call starting time in 24-hour notation (hh:mm): ";
     cin >> hours >> colon >> minutes;
 
-    cout << "Please enter the day of the week in which the call took place (Mo/Tu/We/Th/Fr/Sa/Su): ";
+    cout << "Please enter the day in which the call took place (Mo/Tu/We/Th/Fr/Sa/Su): ";
     cin >> day;
 
     cout << "Please enter the duration of the call in minutes: ";

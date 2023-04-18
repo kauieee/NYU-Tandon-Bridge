@@ -7,10 +7,10 @@ const int ROUND = 3;
 
 int main(){
 
-    double num;
+    double num, fractionalPart;
     int userChoice;
 
-    // Getting input from the user
+    // Getting inputs from the user
     cout << "Please enter a Real number: " << endl;
     cin >> num;
 
@@ -20,20 +20,42 @@ int main(){
          << "3. Round to the nearest whole number" << endl;
     cin >> userChoice;
 
+    fractionalPart = num - (int)num;
+
     switch(userChoice) {
+        
         case FLOOR_ROUND:
-            cout << (int)num << endl;
-            break;
-        case CEILING_ROUND:
-            cout << ((int)num) + 1 << endl;
-            break;
-        case ROUND:
-            if((num - (int)num) < 0.50){
+            if (fractionalPart == 0 || num >= 0){
                 cout << (int)num << endl;
-            }else{
-                cout << ((int)num) + 1 << endl;
+            } else {
+                cout << (int)num - 1 << endl;
             }
             break;
+        
+        case CEILING_ROUND:
+            if (fractionalPart == 0 || num <= 0){
+                cout << (int)num << endl;
+            } else {
+                cout << (int)num + 1 << endl;
+            }
+            break;
+        
+        case ROUND:
+            if (num >= 0){
+                if (fractionalPart < 0.50){
+                    cout << (int)num << endl;
+                } else {
+                    cout << (int)num + 1 << endl;
+                }
+            } else {
+                if (fractionalPart > -0.50){
+                    cout << (int)num << endl;
+                } else {
+                    cout << (int)num - 1 << endl;
+                }
+            }
+            break;
+        
         default:
             cout << "Please enter a valid choice" << endl;
             break;

@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
 
+const double CLUB_CARD_OFFER = 10.0;
+
 int main(){
 
-    double firstItemPrice;
-    double secondItemPrice;
+    double firstItemPrice,secondItemPrice;
     char hasClubCard;
     double taxRate;
     double basePrice;
     double priceAfterBuyOneGetOneOff;
     double totalPriceAfterDiscounts;
-    double clubCardOff = 10.0;
     double finalPriceAfterTax;
 
-    // Getting input from the user
+    // Getting inputs from the user
     cout << "Enter price of first item: ";
     cin >> firstItemPrice;
 
@@ -39,7 +39,7 @@ int main(){
     
     // Deducting additional 10% for club card members
     if (hasClubCard == 'Y' || hasClubCard == 'y') {
-        totalPriceAfterDiscounts =  priceAfterBuyOneGetOneOff - (priceAfterBuyOneGetOneOff * (clubCardOff/100));
+        totalPriceAfterDiscounts =  priceAfterBuyOneGetOneOff - (priceAfterBuyOneGetOneOff * (CLUB_CARD_OFFER/100));
     } else if (hasClubCard == 'N' || hasClubCard == 'n') {
         totalPriceAfterDiscounts = priceAfterBuyOneGetOneOff;
     }
@@ -47,12 +47,15 @@ int main(){
     // Adding tax to the total price after discounts
     finalPriceAfterTax = totalPriceAfterDiscounts + (totalPriceAfterDiscounts * (taxRate / 100));
 
+    // Setting the precision of the base price and the price after discounts to 1
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(1);
+
     cout << "Base price: " << basePrice << endl;
     cout  << "Price after discounts: " << totalPriceAfterDiscounts << endl;
     
     // Setting the precision of the final price after tax to 5
-    cout.setf(ios::fixed);
-    cout.setf(ios::showpoint);
     cout.precision(5);
 
     cout << "Total price: " << finalPriceAfterTax << endl;
