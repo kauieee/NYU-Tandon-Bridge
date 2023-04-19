@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+const double RATE_WEEKEND = 0.15;
+const double RATE_WEEKDAY_PEAK_HOURS = 0.40;
+const double RATE_WEEKDAY_NON_PEAK_HOURS = 0.25;
+
 int main(){
 
     int hours, minutes;
@@ -18,13 +22,17 @@ int main(){
     cout << "Please enter the duration of the call in minutes: ";
     cin >> callDurationInMinutes;
 
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+
     if (day == "Sa" || day == "Su"){
-        totalCost = 0.15 * callDurationInMinutes;
+        totalCost = RATE_WEEKEND * callDurationInMinutes;
     } else {
         if((hours >= 8 && hours <= 17) || (hours == 6 && minutes == 0)){
-            totalCost = 0.40 * callDurationInMinutes;
+            totalCost = RATE_WEEKDAY_PEAK_HOURS * callDurationInMinutes;
         } else {
-            totalCost = 0.25 * callDurationInMinutes;
+            totalCost = RATE_WEEKDAY_NON_PEAK_HOURS * callDurationInMinutes;
         }
     }
 
