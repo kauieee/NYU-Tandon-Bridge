@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-const double RATE_WEEKEND = 0.15;
-const double RATE_WEEKDAY_PEAK_HOURS = 0.40;
-const double RATE_WEEKDAY_NON_PEAK_HOURS = 0.25;
+const double WEEKEND_RATE = 0.15;
+const double WEEKDAY_PEAK_HOURS_RATE = 0.40;
+const double WEEKDAY_NON_PEAK_HOURS_RATE = 0.25;
 
 int main(){
 
@@ -27,12 +27,12 @@ int main(){
     cout.precision(2);
 
     if (day == "Sa" || day == "Su"){
-        totalCost = RATE_WEEKEND * callDurationInMinutes;
+        totalCost = WEEKEND_RATE * callDurationInMinutes;
     } else {
         if((hours >= 8 && hours <= 17) || (hours == 6 && minutes == 0)){
-            totalCost = RATE_WEEKDAY_PEAK_HOURS * callDurationInMinutes;
+            totalCost = WEEKDAY_PEAK_HOURS_RATE * callDurationInMinutes;
         } else {
-            totalCost = RATE_WEEKDAY_NON_PEAK_HOURS * callDurationInMinutes;
+            totalCost = WEEKDAY_NON_PEAK_HOURS_RATE * callDurationInMinutes;
         }
     }
 
