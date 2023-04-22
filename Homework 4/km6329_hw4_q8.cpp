@@ -16,7 +16,7 @@ int main(){
     srand(time(0));
     numberToGuess = (rand() % 100) + 1;
 
-    cout << "I thought of a number between 1 and 100! Try to guess it. \n";
+    cout << "I thought of a number between 1 and 100! Try to guess it.\n";
 
     while(guessesLeft > 0){
         cout << "Range: " << "[" << lowerLimit << ", " << upperLimit << "], "

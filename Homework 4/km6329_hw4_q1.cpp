@@ -10,7 +10,7 @@ int main() {
     cout << "Please enter a positive integer: ";
     cin >> n;
 
-    cout << "Section A" << endl;
+    cout << "section a" << endl;
 
     while(counter <= n){
 
@@ -20,7 +20,7 @@ int main() {
 
     }
 
-    cout << "Section B" << endl;
+    cout << endl << "section b" << endl;
 
     for (int counter = 1; counter <= n; counter++){
         evenNumber = 2 * counter;

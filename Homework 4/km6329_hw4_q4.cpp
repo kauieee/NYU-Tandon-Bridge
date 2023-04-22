@@ -13,7 +13,7 @@ int main() {
     bool seenEndOfInput = false;
 
     // Section A
-    cout << "Section A" << endl;
+    cout << "section a" << endl;
 
     cout << "Please enter the length of the sequence: ";
     cin >> length;
@@ -37,7 +37,7 @@ int main() {
     cout << "The geometric mean is: " << geometricMean << endl << endl;
 
     // Section B
-    cout << "Section B" << endl;
+    cout << "section b" << endl;
 
     num = 0;
     product = 1;
