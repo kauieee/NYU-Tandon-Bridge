@@ -13,22 +13,36 @@ void analyzeDividors(int num, int& outCountDivs, int& outSumDivs);
 //Takes an positive integer num (>= 2) and updates two output parameters outCountDivs and outSumDivs
 //with the number of num's proper divisors and their sum respectively.
 
-bool isPerfect(int num, int& outSumDivs);
+bool isPerfect(int num);
 //Takes a positive integer num (>= 2) and and determines if it is a perfect number or not.
 
 int main(){
 
-    int num, outCountDivs, outSumDivs;
+    int num;
 
     cout << "Please enter a positive integer >= 2: ";
     cin >> num;
 
+    cout << "The perfect numbers between 2 and " << num << " are:" << endl;
+
     for(int currentNum = 2; currentNum <= num; currentNum++){
-        outCountDivs = 0;
-        outSumDivs = 0;
-        analyzeDividors(currentNum, outCountDivs, outSumDivs);
-        if(isPerfect(currentNum, outSumDivs) == true){
+        if(isPerfect(currentNum) == true){
             cout << currentNum << endl;
+        }
+    }
+
+    cout << endl << "Pairs of amicable numbers between 2 and " << num << " are:" << endl;
+
+    for(int currentNum = 2; currentNum <= num; currentNum++){
+        int countDivsN = 0, sumDivsN = 0;
+        int possiblePair, countDivsM = 0, sumDivsM = 0;
+
+        analyzeDividors(currentNum, countDivsN, sumDivsN);
+        possiblePair = sumDivsN;
+        analyzeDividors(possiblePair, countDivsM, sumDivsM);
+
+        if ((currentNum == sumDivsM) && (currentNum != possiblePair) && (possiblePair <= currentNum)) {
+            cout << "(" << possiblePair << "," << currentNum << ")\n";
         }
     }
 
@@ -51,7 +65,12 @@ void analyzeDividors(int num, int& outCountDivs, int& outSumDivs){
     }
 }
 
-bool isPerfect(int num, int& outSumDivs){
+bool isPerfect(int num){
+
+    int outCountDivs = 0, outSumDivs = 0;
+
+    analyzeDividors(num, outCountDivs, outSumDivs);
+
     if(num == outSumDivs){
         return true;
     } else {
